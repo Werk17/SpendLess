@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SpendLess</string>
+    <string name="what_did_you_buy">What did you buy recently?</string>
+    <string name="item">Item</string>
+    <string name="cost_price">Cost/Price</string>
+    <string name="need">Need?</string>
+    <string name="add_item">Add Item</string>
 </resources>
