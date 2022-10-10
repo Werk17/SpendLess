@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/drawable/shape_background.xml" value="0.1" />
+        <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/drawable/show_menu.xml" value="0.1" />
         <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/layout/add_item.xml" value="0.1" />
-        <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/layout/add_item.xml" value="0.22" />
+        <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/layout/list_item.xml" value="0.17972350230414746" />
+        <entry key="..\:/Users/werkc/AndroidStudioProjects/SpendLess/app/src/main/res/menu/show_menu.xml" value="0.2" />
       </map>
     </option>
   </component>

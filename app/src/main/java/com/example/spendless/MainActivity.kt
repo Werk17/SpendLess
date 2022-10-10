@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         addDialog.setPositiveButton("Ok") { dialog, _ ->
             val items = item.text.toString()
             val itemPrice = price.text
-            userList.add(UserData("Item Name: $items", "Item Price: $$itemPrice"))
+            userList.add(UserData("Item(s): $items", "Cost: $$itemPrice"))
             userAdapter.notifyDataSetChanged()
             Toast.makeText(this, "Adding Item to List Success", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
