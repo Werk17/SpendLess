@@ -48,10 +48,11 @@ class MainActivity : AppCompatActivity() {
         addDialog.setView(v)
         addDialog.setPositiveButton("Ok") { dialog, _ ->
             val items = item.text.toString()
-            val itemPrice = price.text
-            userList.add(UserData("Item(s): $items", "Cost: $$itemPrice"))
+            val itemPrice = price.text.toString()
+
+            userList.add(UserData("$items", "Spent: $$itemPrice", "date"))
             userAdapter.notifyDataSetChanged()
-            Toast.makeText(this, "Adding Item to List Success", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
         addDialog.setNegativeButton("Cancel") { dialog, _ ->
@@ -61,8 +62,6 @@ class MainActivity : AppCompatActivity() {
         addDialog.create()
         addDialog.show()
     }
-
-
 
 
 }

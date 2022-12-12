@@ -4,6 +4,7 @@
     package="com.example.spendless">
 
     <application
+        android:name="com.example.spendless.ItemApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
