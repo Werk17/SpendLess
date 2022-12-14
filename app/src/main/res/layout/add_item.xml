@@ -39,7 +39,7 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/shape_background"
             android:hint="Item"
-            android:inputType="textCapWords"
+            android:inputType="text"
             android:padding="15dp"
             android:textColor="@color/cyan_700"
             android:textSize="18sp"
@@ -61,19 +61,20 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
+            android:id="@+id/noteDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
+            android:background="@drawable/shape_background"
             android:hint="Date"
             android:padding="15dp"
-            android:text="Date: "
             android:textColor="@color/cyan_700"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
 
     </LinearLayout>

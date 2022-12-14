@@ -4,9 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.spendless.database.items.ItemDao
 import com.example.spendless.database.items.Items
+import kotlinx.coroutines.flow.Flow
 
 class ItemViewModel(private val itemDao: ItemDao): ViewModel() {
-    fun allItems(): List<Items> = itemDao.getAll()
+    fun allItems(): Flow<List<Items>> = itemDao.getAll()
 }
 
 class ItemViewModelFactory(

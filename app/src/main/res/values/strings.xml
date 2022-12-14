@@ -5,5 +5,7 @@
     <string name="cost_price">Cost/Price</string>
     <string name="need">Need?</string>
     <string name="add_item">Add Item</string>
-<!--    <string name="date">Date %s</string>-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    <string name="date">Date %s</string>-->
 </resources>

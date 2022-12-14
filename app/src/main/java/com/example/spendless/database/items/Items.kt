@@ -8,8 +8,8 @@ import java.util.Date
 
 @Entity
 data class Items(
-    @PrimaryKey val id: Int,
-    @ColumnInfo(name = "title") val title: String?,
-    @NonNull @ColumnInfo(name = "amount_spent") val amount_spent: Double,
+//    @PrimaryKey(autoGenerate = true)  val id: Int,
+    @NonNull @PrimaryKey @ColumnInfo(name = "note") val title: String,
+    @ColumnInfo(name = "amount_spent") val amount_spent: String,
     @ColumnInfo(name = "date") val date: String?
 )

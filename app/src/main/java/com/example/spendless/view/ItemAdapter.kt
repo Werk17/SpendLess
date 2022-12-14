@@ -1,27 +1,31 @@
 package com.example.spendless.view
 
+import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.spendless.R
+import com.example.spendless.MainActivity
 import com.example.spendless.database.items.Items
 import com.example.spendless.databinding.ListItemsBinding
+import com.example.spendless.model.UserData
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 
-class ItemAdapter(private val onItemClicked: (Items) -> Unit) :
+//class ItemAdapter(val c: Context, private val userList: ArrayList<Items>) :
+class ItemAdapter(private val onItemClicked: (Items) -> Unit
+) :
     ListAdapter<Items, ItemAdapter.ItemViewHolder>(DiffCallback) {
+
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Items>() {
             override fun areItemsTheSame(oldItem: Items, newItem: Items): Boolean {
-                return oldItem.id == newItem.id
+                return oldItem.title == newItem.title
             }
 
             override fun areContentsTheSame(oldItem: Items, newItem: Items): Boolean {
@@ -37,8 +41,8 @@ class ItemAdapter(private val onItemClicked: (Items) -> Unit) :
             binding.itemTitle.text = items.title
             binding.itemSubtitle.text = items.amount_spent.toString()
             binding.itemDate.text = SimpleDateFormat(
-                "yyyy-mm-dd"
-            ).format(Date(items.date)).toString()
+                "mm-dd-yyyy"
+            ).format(items.date).toString()
         }
 
     }
@@ -62,7 +66,7 @@ class ItemAdapter(private val onItemClicked: (Items) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-       holder.bind(getItem(position))
+        holder.bind(getItem(position))
     }
 
 }
