@@ -36,7 +36,7 @@ private const val ARG_PARAM2 = "param2"
 class ListFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentListBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private lateinit var recyclerView: RecyclerView
     private lateinit var addsBtn: FloatingActionButton
     private lateinit var userList: ArrayList<Items>
@@ -55,22 +55,22 @@ class ListFragment : Fragment() {
 //        userList = ArrayList<Items>()
 
 //        set find ID
-        addsBtn = binding.addingBtn
-        recyclerView = binding.budgetRecycler
-////        set adapter
-//        userAdapter = ItemAdapter(requireContext())
-////        set Recycler view adapter
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = userAdapter
-
-//        set Dialog
-        addsBtn.setOnClickListener {
-            addInfo()
-        }
-//        arguments?.let {
-//            _binding = it.getString()
-//            param2 = it.getString(ARG_PARAM2)
+//        addsBtn = binding!!.addingBtn
+//        recyclerView = binding!!.budgetRecycler
+//////        set adapter
+////        userAdapter = ItemAdapter(requireContext())
+//////        set Recycler view adapter
+////        recyclerView.layoutManager = LinearLayoutManager(this)
+//        recyclerView.adapter = userAdapter
+//
+////        set Dialog
+//        addsBtn.setOnClickListener {
+//            addInfo()
 //        }
+////        arguments?.let {
+////            _binding = it.getString()
+////            param2 = it.getString(ARG_PARAM2)
+////        }
     }
 
     override fun onCreateView(
@@ -79,17 +79,17 @@ class ListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentListBinding.inflate(inflater, container, false)
-        val view = binding.root
+        val view = binding?.root
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = binding.budgetRecycler
+        recyclerView = (binding?.budgetRecycler ?: null) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val itemAdapter = ItemAdapter({
-            val action = ListFragmentDirections.actionListFragmentSelf()
-            view.findNavController().navigate(action)
+//            val action = ListFragmentDirections.actionListFragmentSelf()
+//            view.findNavController().navigate(action)
         })
         recyclerView.adapter = itemAdapter
         lifecycle.coroutineScope.launch {
@@ -97,6 +97,8 @@ class ListFragment : Fragment() {
                 itemAdapter.submitList((it))
             }
         }
+
+
     }
 
     override fun onDestroyView() {

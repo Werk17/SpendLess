@@ -12,13 +12,12 @@ import com.example.spendless.database.items.Items
 import com.example.spendless.databinding.ListItemsBinding
 import com.example.spendless.model.UserData
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 
 
-//class ItemAdapter(val c: Context, private val userList: ArrayList<Items>) :
-class ItemAdapter(private val onItemClicked: (Items) -> Unit
-) :
+//class ItemAdapter(private val onItemClicked: (Items) -> Unit, private val userList: ArrayList<Items>) :
+class ItemAdapter(private val onItemClicked: (Items) -> Unit) :
     ListAdapter<Items, ItemAdapter.ItemViewHolder>(DiffCallback) {
 
 
@@ -35,14 +34,13 @@ class ItemAdapter(private val onItemClicked: (Items) -> Unit
     }
 
     //    inner class ItemViewHolder(val v: View) : RecyclerView.ViewHolder(v) {
+//    inner class ItemViewHolder(private var binding: ListItemsBinding) :
     inner class ItemViewHolder(private var binding: ListItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(items: Items) {
             binding.itemTitle.text = items.title
             binding.itemSubtitle.text = items.amount_spent.toString()
-            binding.itemDate.text = SimpleDateFormat(
-                "mm-dd-yyyy"
-            ).format(items.date).toString()
+            binding.itemDate.text = items.date
         }
 
     }
@@ -50,7 +48,7 @@ class ItemAdapter(private val onItemClicked: (Items) -> Unit
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ItemAdapter.ItemViewHolder {
+    ): ItemViewHolder {
         val viewHolder = ItemViewHolder(
             ListItemsBinding.inflate(
                 LayoutInflater.from( parent.context),
@@ -58,10 +56,10 @@ class ItemAdapter(private val onItemClicked: (Items) -> Unit
                 false
             )
         )
-        viewHolder.itemView.setOnClickListener {
-            val position = viewHolder.adapterPosition
-            onItemClicked(getItem(position))
-        }
+//        viewHolder.itemView.setOnClickListener {
+//            val position = viewHolder.adapterPosition
+//            onItemClicked(getItem(position))
+//        }
         return viewHolder
     }
 
